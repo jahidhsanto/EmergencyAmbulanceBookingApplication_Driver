@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity_3">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="CREATE YOUR ACCOUNT"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/menu3"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <EditText
+                    android:id="@+id/presentAddrId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#0FA4DC"
+                    android:drawableLeft="@drawable/baseline_home_work_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Present address"
+                    android:inputType="textPostalAddress"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/companyAddrId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#0FA4DC"
+                    android:drawableLeft="@drawable/baseline_location_city_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Company address"
+                    android:inputType="textPostalAddress"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/nidFrontId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#0FA4DC"
+                    android:drawableLeft="@drawable/baseline_cloud_upload_24"
+                    android:drawablePadding="8dp"
+                    android:hint="NID Photo (Front Side)"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/nidBackId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#0FA4DC"
+                    android:drawableLeft="@drawable/baseline_cloud_upload_24"
+                    android:drawablePadding="8dp"
+                    android:hint="NID Photo (Back Side)"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+                <Spinner
+                    android:id="@+id/dropdownButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#0FA4DC"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/nextBtnId_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_blue"
+                    android:text="NEXT"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="20dp" />
+
+                <TextView
+                    android:id="@+id/signinTxtId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Do you want to register another account? Sign in"
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

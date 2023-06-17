@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#DD000000" /> <!-- Shadow color -->
+            <corners android:radius="20dp" /> <!-- Corner radius of the track -->
+        </shape>
+    </item>
+
+    <!-- Background layer -->
+    <item android:top="2dp" android:bottom="2dp" android:left="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- Background color of the track -->
+            <corners android:radius="20dp" /> <!-- Corner radius of the track -->
+        </shape>
+    </item>
+</layer-list>

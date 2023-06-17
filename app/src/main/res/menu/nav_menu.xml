@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_homeId"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_bookAmbulanceId"
+            android:icon="@drawable/baseline_book_online_24"
+            android:title="Book an Ambulance" />
+        <item
+            android:id="@+id/nav_profileId"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_familyMemberId"
+            android:icon="@drawable/baseline_family_restroom_24"
+            android:title="Family Members" />
+        <item
+            android:id="@+id/nav_emergencyContactsId"
+            android:icon="@drawable/baseline_emergency_24"
+            android:title="Emergency Contacts" />
+        <item
+            android:id="@+id/nav_ridehistoryId"
+            android:icon="@drawable/baseline_history_24"
+            android:title="Your Rides" />
+        <item
+            android:id="@+id/nav_paymentId"
+            android:icon="@drawable/baseline_payments_24"
+            android:title="Payment" />
+        <item
+            android:id="@+id/nav_supportId"
+            android:icon="@drawable/baseline_support_agent_24"
+            android:title="Support" />
+        <item
+            android:id="@+id/nav_faqId"
+            android:icon="@drawable/baseline_contact_support_24"
+            android:title="FAQ" />
+        <item
+            android:id="@+id/nav_aboutId"
+            android:icon="@drawable/baseline_info_24"
+            android:title="About" />
+    </group>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logoutId"
+                android:icon="@drawable/baseline_exit_to_app_24"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>
