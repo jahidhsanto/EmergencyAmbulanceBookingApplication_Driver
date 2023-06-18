@@ -43,7 +43,7 @@ public class Home_Driver extends AppCompatActivity implements NavigationView.OnN
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_driver);
 
-        profileName = findViewById(R.id.profileNameId);
+        profileName = findViewById(R.id.senderProfileNameId);
         ambulanceCategory = findViewById(R.id.ambulanceCategoryId);
         ambulanceNumber = findViewById(R.id.ambulanceNumberId);
         hospitalName = findViewById(R.id.hospitalNameId);

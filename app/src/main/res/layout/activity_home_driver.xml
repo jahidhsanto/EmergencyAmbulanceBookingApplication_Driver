@@ -40,7 +40,7 @@
                     android:layout_height="match_parent" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profileImageId"
+                    android:id="@+id/senderProfileImageId"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="15dp"
@@ -116,7 +116,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view">
 
                     <TextView
-                        android:id="@+id/profileNameId"
+                        android:id="@+id/senderProfileNameId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Driver Name"
