@@ -9,4 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#8692f7</color>
     <color name="lavender">#8692f7</color>
+    <color name="colorAccent">#00ffff</color>
+    <color name="colorGrey">#D3D3D3</color>
+    <color name="colorPrimary">#0FA4DC</color>
+
+
+    <color name="colorPrimaryDark">#2f333f</color>
+    <color name="bluelight">#49acd5</color>
+    <color name="green">#45bc62</color>
+    <color name="orange">#eaad43</color>
 </resources>

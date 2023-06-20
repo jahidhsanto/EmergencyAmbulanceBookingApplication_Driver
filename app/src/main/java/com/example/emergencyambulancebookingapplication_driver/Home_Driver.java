@@ -130,7 +130,14 @@ public class Home_Driver extends AppCompatActivity implements NavigationView.OnN
             startActivity(new Intent(this, Home_Driver.class));
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-
+        if (item.getItemId() == R.id.nav_profileId) {
+            startActivity(new Intent(this, ProfileSetting.class));
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        if (item.getItemId() == R.id.nav_ridehistoryId) {
+            startActivity(new Intent(this, RideHistory.class));
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
         if (item.getItemId() == R.id.nav_logoutId) {
             fAuth.signOut();
             startActivity(new Intent(this, MainActivity.class));

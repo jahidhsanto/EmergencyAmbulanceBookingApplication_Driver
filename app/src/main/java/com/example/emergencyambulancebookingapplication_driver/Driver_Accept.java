@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -19,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -39,7 +41,7 @@ public class Driver_Accept extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
     public static String userID, senderUserID;
-    private String driverProfileName, driverContactNumber, hospitalName;
+    private String driverProfileName, driverContactNumber, hospitalName, bookingId;
     private StorageReference storageReference;
     private LatLng startLocation, endLocation;
     double latitude, longitude;
@@ -67,9 +69,9 @@ public class Driver_Accept extends AppCompatActivity implements View.OnClickList
 
         userID = fAuth.getCurrentUser().getUid();
 
+        generateBookingId();
+
         fetchInformation();
-
-
     }
 
     private void fetchInformation() {
@@ -164,6 +166,8 @@ public class Driver_Accept extends AppCompatActivity implements View.OnClickList
             bookingRef.update("status", "BOOKED")
                     .addOnSuccessListener(result -> {
                         Toast.makeText(this, "Booking confirmed successfully", Toast.LENGTH_SHORT).show();
+
+                        startActivity(new Intent(Driver_Accept.this, Driver_Start.class));
                         sendToUser();
                     })
                     .addOnFailureListener(error -> {
@@ -178,10 +182,11 @@ public class Driver_Accept extends AppCompatActivity implements View.OnClickList
 
         // Create a map with the additional data
         Map<String, Object> additionalData = new HashMap<>();
+        additionalData.put("bookingId", bookingId);
         additionalData.put("driverProfileName", driverProfileName);
         additionalData.put("driverContactNumber", driverContactNumber);
         additionalData.put("ambulanceNumber", "ambulanceNumber");
-//        additionalData.put("hospitalName", hospitalName);
+        additionalData.put("hospitalName", "hospitalName");
 
         // Store the additional data in the new document reference
         additionalDataRef.set(additionalData, SetOptions.merge())
@@ -190,6 +195,21 @@ public class Driver_Accept extends AppCompatActivity implements View.OnClickList
                 })
                 .addOnFailureListener(error -> {
                     Toast.makeText(this, "Failed to store additional data: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    // Create a method to generate the next booking ID
+    private void generateBookingId() {
+        CollectionReference bookingsCollection = fStore.collection("bookings");
+        bookingsCollection.get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    int count = queryDocumentSnapshots.size();
+
+                    // Generate the next booking ID
+                    bookingId = "B_" + String.format("%02d", count + 1) + "_" + fStore.collection("bookings").document().getId();
+                })
+                .addOnFailureListener(e -> {
+                    // Handle the failure to retrieve the bookings collection
                 });
     }
 }
